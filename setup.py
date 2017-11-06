@@ -77,7 +77,6 @@ setup(
     py_modules=['enaml_native_barcode'],
     data_files=find_data_files("enaml-native-barcode", ['android', 'ios', 'src']),
     install_requires=['enaml-native-cli'],
-    classifiers=["Framework :: enaml-native"],
     entry_points={
         #: Add any other recipes here
         'p4a_recipe': [
