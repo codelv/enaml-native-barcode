@@ -3,6 +3,9 @@
 A QRCode reader and barcode scanning package for enaml-native using [zxing](https://github.com/zxing/zxing).
 More specifically, it uses the embedded version provided by [zxing-android-embedded](https://github.com/journeyapps/zxing-android-embedded).
 
+[![See the demo on youtube](https://img.youtube.com/vi/lYF8XioDd78/0.jpg)](https://youtu.be/lYF8XioDd78)
+
+
 
 ### Installation
 
