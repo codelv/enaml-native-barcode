@@ -191,8 +191,8 @@ class AndroidBarcodeView(AndroidViewGroup, ProxyBarcodeView):
                 self.widget.decodeSingle(self.widget.getId())
             else:
                 self.widget.decodeContinuous(self.widget.getId())
-        else:
-            self.widget.pause()
+        #: Single stops automatically
+        #: stopDecoding does not work with the finder and hence is skipped here
 
 
 class AndroidBarcodeFinderView(AndroidFrameLayout, AndroidBarcodeView, ProxyBarcodeFinderView):

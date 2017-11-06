@@ -1,0 +1,18 @@
+
+from enamlnative.core.api import *
+from enamlnative.widgets.api import *
+from zxing.widgets.barcode import BarcodeView, BarcodeFinderView
+from enamlnative.android.app import AndroidApplication
+
+app = AndroidApplication.instance()
+
+enamldef ContentView(Flexbox): view:
+    flex_direction = "column"
+    BarcodeFinderView:
+        #: Request permission
+        active = True
+        mode = 'single'
+        #: Set clickable
+        clickable = True
+        clicked :: self.scanning = not self.scanning
+        scanned :: app.show_toast("{}".format(change['value']))

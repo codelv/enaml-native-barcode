@@ -1,0 +1,7 @@
+enaml-native==2.11.6
+  - enaml-native-cli [required: Any, installed: 1.3.1]
+  - p4a-crystax [required: >=1.1, installed: 1.1]
+  - p4a-msgpack [required: Any, installed: 0.4.8]
+  - p4a-nucleic [required: >=1.1, installed: 1.2.3]
+enaml-native-barcode==1.0
+wheel==0.30.0
