@@ -128,6 +128,11 @@ class AndroidBarcodeView(AndroidViewGroup, ProxyBarcodeView):
         """
         super(AndroidBarcodeView, self).init_widget()
         d = self.declaration
+
+        #: Observe activity state changes
+        app = self.get_context()
+        app.observe('state', self.on_activity_lifecycle_changed)
+
         if d.active:
             self.set_active(d.active)
         if d.light:
@@ -136,7 +141,19 @@ class AndroidBarcodeView(AndroidViewGroup, ProxyBarcodeView):
         if d.scanning:
             self.set_scanning(d.scanning)
 
+    def on_activity_lifecycle_changed(self, change):
+        """ If the app pauses without pausing the barcode scanner
+            the camera can't be reopened. So we must do it here. 
+        """
+        d = self.declaration
+        if d.active:
+            if change['value'] == 'paused':
+                self.widget.pause(now=True)
+            elif change['value'] == 'resumed':
+                self.widget.resume()
+
     def destroy(self):
+        """ Cleanup the activty lifecycle listener """
         if self.widget:
             self.set_active(False)
         super(AndroidBarcodeView, self).destroy()

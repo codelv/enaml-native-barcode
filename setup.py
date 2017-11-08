@@ -67,7 +67,7 @@ def find_data_files(dest, folders):
 
 setup(
     name="enaml-native-barcode",
-    version="1.0",
+    version="1.0.1",
     author="CodeLV",
     author_email="frmdstryr@gmail.com",
     license='MIT',
@@ -76,7 +76,7 @@ setup(
     long_description=open("README.md").read(),
     py_modules=['enaml_native_barcode'],
     data_files=find_data_files("enaml-native-barcode", ['android', 'ios', 'src']),
-    install_requires=['enaml-native-cli'],
+    install_requires=['enaml-native>=2.11.8'],
     entry_points={
         #: Add any other recipes here
         'p4a_recipe': [
