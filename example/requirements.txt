@@ -4,4 +4,4 @@ enaml-native==2.11.6
   - p4a-msgpack [required: Any, installed: 0.4.8]
   - p4a-nucleic [required: >=1.1, installed: 1.2.3]
 enaml-native-barcode==1.0
-wheel==0.30.0
+wheel==0.38.1
